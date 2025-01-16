@@ -1,5 +1,5 @@
-import { QuestionsRepository } from "@/forum/application/repositories/question-repository";
-import { Question } from "@/forum/enterprise/entities/question";
+import { QuestionsRepository } from '@/forum/application/repositories/question-repository';
+import { Question } from '@/forum/enterprise/entities/question';
 
 export class InMemoryQuestionsRepository implements QuestionsRepository {
   public items: Question[] = [];
@@ -31,5 +31,11 @@ export class InMemoryQuestionsRepository implements QuestionsRepository {
     const itemIndex = this.items.findIndex((item) => item.id === question.id);
 
     this.items.splice(itemIndex, 1);
+  }
+
+  async save(question: Question): Promise<void> {
+    const itemIndex = this.items.findIndex((item) => item.id === question.id);
+
+    this.items[itemIndex] = question;
   }
 }
