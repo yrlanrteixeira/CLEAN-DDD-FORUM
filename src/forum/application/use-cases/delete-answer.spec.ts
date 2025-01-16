@@ -5,6 +5,7 @@ import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { makeAnswer } from "test/factories/make-answers";
 let inMemoryAnswersRepository: InMemoryAnswersRepository;
 let sut: DeleteAnswerUseCase;
+
 describe("Delete Answer", () => {
   beforeEach(() => {
     inMemoryAnswersRepository = new InMemoryAnswersRepository();
