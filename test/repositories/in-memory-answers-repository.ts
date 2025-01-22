@@ -22,7 +22,7 @@ export class InMemoryAnswersRepository implements AnswersRepository {
     return answers;
   }
 
-  create(answer: Answer): Promise<void> {
+  async create(answer: Answer): Promise<void> {
     this.items.push(answer);
     return Promise.resolve();
   }
