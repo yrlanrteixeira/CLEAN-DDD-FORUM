@@ -23,6 +23,10 @@ export class Answer extends Entity<AnswerProps> {
     return this.props.questionId;
   }
 
+  get answerId() {
+    return this.id;
+  }
+
   get createdAt() {
     return this.props.createdAt;
   }

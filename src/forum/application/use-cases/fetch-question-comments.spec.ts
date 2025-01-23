@@ -1,7 +1,3 @@
-import { makeQuestion } from 'test/factories/make-question';
-import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository';
-import { FetchQuestionAnswersQuestionsUseCase } from './fetch-questions-answers';
-import { makeAnswer } from 'test/factories/make-answers';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { InMemoryQuestionCommentsRepository } from 'test/repositories/in-memory-question-comments-repository';
 import { FetchQuestionCommentsQuestionsUseCase } from './fetch-question-comments';
