@@ -1,4 +1,4 @@
-import { QuestionComment } from '@/forum/enterprise/entities/question-comment';
+import { QuestionComment } from '@/domain/forum/enterprise/entities/question-comment';
 import { QuestionCommentRepository } from '../repositories/question-comments-repository';
 
 interface FetchQuestionCommentsUseCaseRequest {

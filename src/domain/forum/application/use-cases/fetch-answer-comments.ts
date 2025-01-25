@@ -1,4 +1,4 @@
-import { AnswerComment } from '@/forum/enterprise/entities/answer-comment';
+import { AnswerComment } from '@/domain/forum/enterprise/entities/answer-comment';
 import { AnswerCommentRepository } from '../repositories/answer-comments-repository';
 
 interface FetchAnswerCommentsUseCaseRequest {

@@ -1,6 +1,6 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { AnswersRepository } from '../repositories/answers-repository';
-import { Question } from '@/forum/enterprise/entities/question';
+import { Question } from '@/domain/forum/enterprise/entities/question';
 import { QuestionsRepository } from '../repositories/question-repository';
 
 interface ChooseQuestionBestAnswerUseCaseRequest {

@@ -1,7 +1,7 @@
-import { Answer } from '@/forum/enterprise/entities/answer';
+import { Answer } from '@/domain/forum/enterprise/entities/answer';
 
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
-import { AnswerComment } from '@/forum/enterprise/entities/answer-comment';
+import { AnswerComment } from '@/domain/forum/enterprise/entities/answer-comment';
 import { AnswerCommentRepository } from '../repositories/answer-comments-repository';
 import { AnswersRepository } from '../repositories/answers-repository';
 

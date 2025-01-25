@@ -1,5 +1,5 @@
-import { Question } from "@/forum/enterprise/entities/question";
-import { QuestionsRepository } from "../repositories/question-repository";
+import { Question } from '@/domain/forum/enterprise/entities/question';
+import { QuestionsRepository } from '../repositories/question-repository';
 
 interface GetQuestionBySlugUseCaseRequest {
   slug: string;
@@ -16,7 +16,7 @@ export class GetQuestionBySlugUseCase {
     const question = await this.questionRepository.findBySlug(slug);
 
     if (!question) {
-      throw new Error("Question not found");
+      throw new Error('Question not found');
     }
 
     return { question: question! };

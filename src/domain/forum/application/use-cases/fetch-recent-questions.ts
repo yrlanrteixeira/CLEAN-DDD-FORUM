@@ -1,4 +1,4 @@
-import { Question } from '@/forum/enterprise/entities/question';
+import { Question } from '@/domain/forum/enterprise/entities/question';
 import { QuestionsRepository } from '../repositories/question-repository';
 
 interface FetchRecentQuestionsUseCaseRequest {

@@ -1,7 +1,7 @@
-import { Question } from '@/forum/enterprise/entities/question';
+import { Question } from '@/domain/forum/enterprise/entities/question';
 import { QuestionsRepository } from '../repositories/question-repository';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
-import { QuestionComment } from '@/forum/enterprise/entities/question-comment';
+import { QuestionComment } from '@/domain/forum/enterprise/entities/question-comment';
 import { QuestionCommentRepository } from '../repositories/question-comments-repository';
 
 interface CommentOnQuestionUseCaseRequest {
