@@ -1,24 +1,20 @@
-import { AnswersRepository } from '../repositories/answers-repository';
-import { Answer } from '@/domain/forum/enterprise/entities/answer';
+import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository';
+import { Answer } from '../../enterprise/entities/answer';
 
-interface FetchQuestionAnswersQuestionsUseCaseRequest {
-  page: number;
+interface FetchQuestionAnswersRequest {
   questionId: string;
+  page: number;
 }
 
-interface FetchQuestionAnswersQuestionsUseCaseResponse {
+interface FetchQuestionAnswersResponse {
   answers: Answer[];
 }
 
 export class FetchQuestionAnswersQuestionsUseCase {
-  constructor(private answerRepository: AnswersRepository) {}
+  constructor(private answersRepository: InMemoryAnswersRepository) {}
 
-  async execute({
-    page,
-    questionId,
-  }: FetchQuestionAnswersQuestionsUseCaseRequest): Promise<FetchQuestionAnswersQuestionsUseCaseResponse> {
-    const answers = await this.answerRepository.findManyByQuestionId(questionId, { page });
-
+  async execute({ questionId, page }: FetchQuestionAnswersRequest): Promise<FetchQuestionAnswersResponse> {
+    const answers = await this.answersRepository.findByQuestionId(questionId, { page });
     return { answers };
   }
 }
