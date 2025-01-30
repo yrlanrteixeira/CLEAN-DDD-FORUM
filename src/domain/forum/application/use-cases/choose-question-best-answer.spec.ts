@@ -6,6 +6,8 @@ import { ChooseQuestionBestAnswerUseCase } from './choose-question-best-answer';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { makeAnswer } from 'test/factories/make-answers';
 import { makeQuestion } from 'test/factories/make-question';
+import { ResourceNotFoundError } from './errors/resource-not-found-error';
+import { NotAllowedError } from './errors/not-allowed-error';
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository;
 let inMemoryAnswersRepository: InMemoryAnswersRepository;
@@ -48,11 +50,13 @@ describe('Choose Question Best Answer', () => {
     await inMemoryQuestionsRepository.create(question);
     await inMemoryAnswersRepository.create(answer);
 
-    expect(() => {
-      return sut.execute({
-        answerId: answer.id.toString(),
-        authorId: 'author-2',
-      });
-    }).rejects.toThrow('Not allowed.');
+    const result = sut.execute({
+      answerId: answer.id.toString(),
+      authorId: 'author-2',
+    });
+
+    await expect((await result).isLeft()).toBeTruthy();
+
+    await expect((await result).value).toBeInstanceOf(NotAllowedError);
   });
 });
